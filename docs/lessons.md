@@ -1,0 +1,161 @@
+1. Laravel урок №1: [ Установка фреймворка ] - https://www.youtube.com/watch?v=jlplQaItZa0
+
+- Конфиг апача:
+<VirtualHost *:80>
+    ServerAdmin webmaster@dummy-host2.example.com
+    DocumentRoot "C:/xampp/htdocs/poligon.local/public"
+    ServerName poligon.local
+
+    <Directory /xampp/htdocs/poligon.local/public>
+        Options Indexes FollowSymLinks MultiViews
+        AllowOverride All
+        Order Allow,Deny
+        Allow from all
+    </Directory>
+
+    ErrorLog "logs/poligon.local-error.log"
+    CustomLog "logs/poligon.local-access.log" common
+</VirtualHost>
+
+
+- Указываем версию при установке:
+composer create-project --prefer-dist laravel/laravel=5.7.2
+
+- После клонирования репозитория:
+
+Копировать .env.example в .env
+
+php artisan key:generate
+
+2. Laravel урок №2: [ Установка базовых пакетов и плагинов ] - https://www.youtube.com/watch?v=iG6RtfkkoKQ
+
+- Устанавливаем плагин  PhpStorm - https://plugins.jetbrains.com/plugin/7532-laravel
+
+- Устанавливаем пакет - https://github.com/barryvdh/laravel-ide-helper
+composer require --dev barryvdh/laravel-ide-helper
+
+- Настраиваем его!!!
+
+Добавляем в композер
+"scripts":{
+    "post-update-cmd": [
+        "Illuminate\\Foundation\\ComposerScripts::postUpdate",
+        "php artisan ide-helper:generate",
+        "php artisan ide-helper:meta"
+    ]
+},
+
+выполняем - composer update
+
+
+- Создаем парпку docs
+
+- Настраиваем директории PhpStorm
+
+- Устанавливаем composer require barryvdh/laravel-debugbar --dev
+
+3. Laravel урок №3: [ Создание БД. Миграции ] - https://www.youtube.com/watch?v=RnZhGrz7aLE
+
+- Создаем БД poligon в кодировке utf8mb4_unicode_ci
+
+- Создаем модели и миграции:
+php artisan make:model Models/BlogCategory -m
+php artisan make:model Models/BlogPost -m
+
+4. Laravel урок №4: [ Создание таблиц ] - https://www.youtube.com/watch?v=5dZEVePueGQ
+
+- правим AppServiceProvider
+Добавляем в     public function boot()
+                {
+                    Schema::defaultStringLength(191); // Было в Laravel урок №3: [ Создание БД. Миграции ]
+                }
+Это связано с версией БД и описано в - https://laravel.com/docs/5.7/migrations
+
+- php artisan migrate
+
+
+5. Laravel урок №5: [ Структура таблиц ] - https://www.youtube.com/watch?v=cUjMnDGKS78
+
+- Переносим User в модели
+- Эксклудим папки bootstrap, storage в настройках проекта
+
+6. Laravel урок №6: [ Seeds - заполнение БД тестовыми данными ] - https://www.youtube.com/watch?v=RjztD_1kQwc
+
+- Пользователей и категории, создаем с помощью сидов.
+
+- Создаем сиды:
+php artisan make:seeder UsersTableSeeder
+php artisan make:seeder BlogCategoriesTableSeeder
+
+- Запускаем сиды:
+php artisan db:seed
+php artisan db:seed --class=UsersTableSeeder
+php artisan migrate:refresh --seed
+
+7. Laravel урок №7: [ Seeds - Фабрики, Facker ] - https://www.youtube.com/watch?v=go1gUbAivYQ
+
+php artisan make:factory BlogPostFactory
+
+php artisan migrate:refresh --seed
+
+В случае ошибки:
+ReflectionException : Class r does not exist
+Выполнить:
+composer dump-autoload
+
+
+7.1. #1 [Ответы на вопросы по курсу Laravel ] - https://www.youtube.com/watch?v=cKvQ8lX7RDk&list=PLoonZ8wII66iP0fJPHhkLXa3k7CMef9ak&index=12
+
+8. Laravel урок №8: [ REST, route, Создаем первый контроллер ] - https://www.youtube.com/watch?v=q9_do7NdRhw&list=PLoonZ8wII66iP0fJPHhkLXa3k7CMef9ak&index=13
+
+php artisan make:controller RestTestController --resource
+
+2:40 https://www.youtube.com/watch?v=q9_do7NdRhw&list=PLoonZ8wII66iP0fJPHhkLXa3k7CMef9ak&index=13
+
+Список всех маршрутов:
+php artisan route:list
+
+9. Laravel урок №9: [ Контроллер статей блога ] - https://www.youtube.com/watch?v=Ld7qNpSxp0s&list=PLoonZ8wII66iP0fJPHhkLXa3k7CMef9ak&index=14
+
+php artisan make:controller Blog/BaseController
+
+php artisan make:controller Blog/PostController --resource
+
+10. Laravel урок №10: [ Вывод всех статей. Новый маршрут ] - https://www.youtube.com/watch?v=fQ6j-nZzXJE&list=PLoonZ8wII66iP0fJPHhkLXa3k7CMef9ak&index=15
+
+11. Laravel урок №11: [ Добавляем вёрстку "из коробки" ] - https://www.youtube.com/watch?v=VENj6euwpSU&list=PLoonZ8wII66iP0fJPHhkLXa3k7CMef9ak&index=16
+
+php artisan make:auth
+
+php artisan migrate
+
+http://poligon.local/register
+
+12. Laravel урок №12: [ Контроллер управления категориями ] - https://www.youtube.com/watch?v=gDvBi3_2TuA&list=PLoonZ8wII66iP0fJPHhkLXa3k7CMef9ak&index=17
+
+php artisan make:controller Blog/Admin/CategoryController --resource
+
+13. Laravel урок №13: [ Управление категориями. Продолжение ] - https://www.youtube.com/watch?list=PLoonZ8wII66iP0fJPHhkLXa3k7CMef9ak&v=gu6uA9MXykQ
+
+php artisan make:controller Blog/Admin/BaseController
+
+14. Laravel урок №14: [ Страница всех категорий. Админка ] - https://www.youtube.com/watch?v=fqogoFzH5kA&list=PLoonZ8wII66iP0fJPHhkLXa3k7CMef9ak&index=19
+
+artisan route:list > route.txt
+route.txt - загитигнорен
+
+15. Laravel урок №15: [ Пагинация ] - https://www.youtube.com/watch?v=WuAzRZqwo3s&list=PLoonZ8wII66iP0fJPHhkLXa3k7CMef9ak&index=20
+
+16. Laravel урок №:16 [ Страница редактирования категории ] - https://www.youtube.com/watch?v=DEnuj8jFG54&list=PLoonZ8wII66iP0fJPHhkLXa3k7CMef9ak&index=21
+
+17. Laravel урок №17: [ Продолжение: Страница редактирования категории ] - https://www.youtube.com/watch?v=tMpuJzbAINg&list=PLoonZ8wII66iP0fJPHhkLXa3k7CMef9ak&index=22
+
+18. Laravel урок №18: [ Обновление (изменение) категории #1 ] - https://www.youtube.com/watch?v=Io1GfLuSAbc&list=PLoonZ8wII66iP0fJPHhkLXa3k7CMef9ak&index=23
+
+19. Laravel урок №19: [ Изменение (обновление) категории #2 ] - https://www.youtube.com/watch?v=TpiU6txBEfQ&list=PLoonZ8wII66iP0fJPHhkLXa3k7CMef9ak&index=24
+
+20. Laravel урок №20: [Представления - обновление категории #3] - https://www.youtube.com/watch?v=d3_An9p8u4k&list=PLoonZ8wII66iP0fJPHhkLXa3k7CMef9ak&index=25
+
+21. Laravel урок №21: [ Валидация данных ] - https://www.youtube.com/watch?v=0fxQ6AL29i4&list=PLoonZ8wII66iP0fJPHhkLXa3k7CMef9ak&index=26
+
+22. Laravel урок №22: [ Валидация данных 2. Продолжение ] - https://www.youtube.com/watch?v=Z2RxRCEKV9o&list=PLoonZ8wII66iP0fJPHhkLXa3k7CMef9ak&index=27
