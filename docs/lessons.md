@@ -159,3 +159,7 @@ route.txt - загитигнорен
 21. Laravel урок №21: [ Валидация данных ] - https://www.youtube.com/watch?v=0fxQ6AL29i4&list=PLoonZ8wII66iP0fJPHhkLXa3k7CMef9ak&index=26
 
 22. Laravel урок №22: [ Валидация данных 2. Продолжение ] - https://www.youtube.com/watch?v=Z2RxRCEKV9o&list=PLoonZ8wII66iP0fJPHhkLXa3k7CMef9ak&index=27
+
+php artisan make:request BlogCategoryUpdateRequest
+
+23. Laravel урок №23: [ Добавление категории (insert, create) ] - https://www.youtube.com/watch?v=LavUiLTuIFY&list=PLoonZ8wII66iP0fJPHhkLXa3k7CMef9ak&index=28
