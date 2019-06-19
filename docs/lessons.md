@@ -163,3 +163,9 @@ route.txt - загитигнорен
 php artisan make:request BlogCategoryUpdateRequest
 
 23. Laravel урок №23: [ Добавление категории (insert, create) ] - https://www.youtube.com/watch?v=LavUiLTuIFY&list=PLoonZ8wII66iP0fJPHhkLXa3k7CMef9ak&index=28
+
+php artisan migrate:refresh --seed
+
+24. Laravel урок №24: [ Добавление категории. Продолжение ] - https://www.youtube.com/watch?v=bdg7OLom_YY&list=PLoonZ8wII66iP0fJPHhkLXa3k7CMef9ak&index=29
+
+25. Laravel урок №25: [ Что такое Репозиторий? #1 ] - https://www.youtube.com/watch?list=PLoonZ8wII66iP0fJPHhkLXa3k7CMef9ak&v=Y-GxEsNiIGU
