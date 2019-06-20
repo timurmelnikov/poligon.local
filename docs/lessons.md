@@ -168,4 +168,14 @@ php artisan migrate:refresh --seed
 
 24. Laravel урок №24: [ Добавление категории. Продолжение ] - https://www.youtube.com/watch?v=bdg7OLom_YY&list=PLoonZ8wII66iP0fJPHhkLXa3k7CMef9ak&index=29
 
+https://designpatternsphp.readthedocs.io/ru/latest/More/Repository/README.html
+
 25. Laravel урок №25: [ Что такое Репозиторий? #1 ] - https://www.youtube.com/watch?list=PLoonZ8wII66iP0fJPHhkLXa3k7CMef9ak&v=Y-GxEsNiIGU
+
+26. Laravel урок №26: [ Что такое Репозиторий? #2 ] - https://www.youtube.com/watch?v=_2nrUJtIsCo&list=PLoonZ8wII66iP0fJPHhkLXa3k7CMef9ak&index=31
+
+27. Laravel урок №27: [ Что такое Репозиторий? #3 ] - https://www.youtube.com/watch?v=RLs29NVgkMc&list=PLoonZ8wII66iP0fJPHhkLXa3k7CMef9ak&index=32
+
+28. Laravel урок №28: [ Создание репозитория для категорий #1 ] - https://www.youtube.com/watch?v=S5k0I9F4bO0&list=PLoonZ8wII66iP0fJPHhkLXa3k7CMef9ak&index=33
+
+29. Laravel урок №29: [ Создание репозитория для категорий #2 ] - https://www.youtube.com/watch?v=S5AIDTd8vIk&list=PLoonZ8wII66iP0fJPHhkLXa3k7CMef9ak&index=34
