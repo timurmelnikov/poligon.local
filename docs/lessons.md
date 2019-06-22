@@ -181,3 +181,5 @@ https://designpatternsphp.readthedocs.io/ru/latest/More/Repository/README.html
 29. Laravel урок №29: [ Создание репозитория для категорий #2 ] - https://www.youtube.com/watch?v=S5AIDTd8vIk&list=PLoonZ8wII66iP0fJPHhkLXa3k7CMef9ak&index=34
 
 30. Laravel урок №30: [ Переносим логику запросов в репозиторий #1 ] - https://www.youtube.com/watch?v=UKF1xvVKJFA&list=PLoonZ8wII66iP0fJPHhkLXa3k7CMef9ak&index=35
+
+31. Laravel урок №31: [ Переносим логику запросов в репозиторий #2 ] - https://www.youtube.com/watch?v=kGOkQTcIrLY&list=PLoonZ8wII66iP0fJPHhkLXa3k7CMef9ak&index=36
