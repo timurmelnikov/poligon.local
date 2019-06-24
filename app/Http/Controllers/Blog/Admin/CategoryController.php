@@ -64,20 +64,14 @@ class CategoryController extends BaseController
             $data['slug'] = str_slug($data['title']);
         }
 
-        // Создаст объект, но не добавит в БД
-        //        $item = new BlogCategory($data);
-        //        $item->save();
-
         // Создаст объект и добавит в БД
         $item = (new BlogCategory())->create($data);
 
         if ($item) {
-            return redirect()
-                ->route('blog.admin.categories.edit', $item->id)
+            return redirect()->route('blog.admin.categories.edit', $item->id)
                 ->with(['success' => 'Успешно сохранено']);
         } else {
-            return back()
-                ->withErrors(['msg' => 'Ошибка сохраенения'])
+            return back()->withErrors(['msg' => 'Ошибка сохраенения'])
                 ->withInput();
         }
         /**/
@@ -92,9 +86,6 @@ class CategoryController extends BaseController
      */
     public function edit($id)
     {
-
-        //$item = BlogCategory::findOrFail($id);
-        //$categoryList = BlogCategory::all();
 
         $item = $this->blogCategoryRepository->getEdit($id);
         if (empty($item)) {
@@ -118,8 +109,7 @@ class CategoryController extends BaseController
      */
     public function update(BlogCategoryUpdateRequest $request, $id)
     {
-
-        $item = BlogCategory::find($id);
+        $item = $this->blogCategoryRepository->getEdit($id);
 
         if (empty($item)) {
             return back()

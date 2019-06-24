@@ -54,7 +54,6 @@ class BlogCategoryRepository extends CoreRepository
             ->selectRaw($columns)
             ->toBase()
             ->get();
-//dd($result);
         return $result;
     }
 
