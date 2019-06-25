@@ -185,3 +185,7 @@ https://designpatternsphp.readthedocs.io/ru/latest/More/Repository/README.html
 31. Laravel урок №31: [ Переносим логику запросов в репозиторий #2 ] - https://www.youtube.com/watch?v=kGOkQTcIrLY&list=PLoonZ8wII66iP0fJPHhkLXa3k7CMef9ak&index=36
 
 32. Laravel урок №32: [ Управление статьями блога на Ларавел ] - https://www.youtube.com/watch?v=Ggzb7UPZbAA&list=PLoonZ8wII66iP0fJPHhkLXa3k7CMef9ak&index=37
+
+php artisan make:controller Blog/Admin/PostController -r
+
+33. Laravel урок №33: [ Вывод всех статей блога на Ларавел ] - https://www.youtube.com/watch?v=hVVC_kpOIPk&list=PLoonZ8wII66iP0fJPHhkLXa3k7CMef9ak&index=38
