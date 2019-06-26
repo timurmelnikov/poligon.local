@@ -189,3 +189,5 @@ https://designpatternsphp.readthedocs.io/ru/latest/More/Repository/README.html
 php artisan make:controller Blog/Admin/PostController -r
 
 33. Laravel урок №33: [ Вывод всех статей блога на Ларавел ] - https://www.youtube.com/watch?v=hVVC_kpOIPk&list=PLoonZ8wII66iP0fJPHhkLXa3k7CMef9ak&index=38
+
+34. Laravel урок №34: [ Отношения Eloquent: Relationships - первые шаги ] - https://www.youtube.com/watch?v=YBBS2JsIpjg&list=PLoonZ8wII66iP0fJPHhkLXa3k7CMef9ak&index=39

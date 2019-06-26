@@ -19,4 +19,33 @@ class BlogPostRepository extends CoreRepository
     {
         return Model::class;
     }
+
+    /**
+     * Получить список статей для вывода в списке
+     * (Админка).
+     *
+     * @param int $perPage
+     * @return LengthAwarePaginator
+     */
+    public function getAllWithPaginate($perPage = 25)
+    {
+
+        $columns = [
+            'id',
+            'title',
+            'slug',
+            'is_published',
+            'published_at',
+            'user_id',
+            'category_id'
+        ];
+
+        $result = $this->startConditions()
+            ->select($columns)
+            ->orderBy('id', 'DESC')
+            ->paginate($perPage);
+
+        return $result;
+
+    }
 }
