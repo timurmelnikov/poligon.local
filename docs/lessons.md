@@ -193,3 +193,7 @@ php artisan make:controller Blog/Admin/PostController -r
 34. Laravel урок №34: [ Отношения Eloquent: Relationships - первые шаги ] - https://www.youtube.com/watch?v=YBBS2JsIpjg&list=PLoonZ8wII66iP0fJPHhkLXa3k7CMef9ak&index=39
 
 35. Laravel урок №35: [ Laravel 5.8 Что нового? ] - https://www.youtube.com/watch?v=PgRcyJe76C8&list=PLoonZ8wII66iP0fJPHhkLXa3k7CMef9ak&index=40
+
+36. ...
+
+37. Laravel урок № 0.1 / 37: [ Переход с Laravel 5.7 на 5.8 ] #2 - https://www.youtube.com/watch?v=43LNZGfSFSw
