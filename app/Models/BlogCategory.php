@@ -18,4 +18,16 @@ class BlogCategory extends Model
     ];
 
 
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function parentCategory()
+    {
+        // Категория принадлежит родительской категории.
+        return $this->belongsTo(Self::class, 'parent_id', 'id');
+    }
+
+
+
 }

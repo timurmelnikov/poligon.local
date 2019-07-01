@@ -197,3 +197,9 @@ php artisan make:controller Blog/Admin/PostController -r
 36. Laravel урок № 0 / 36: [ Переход с Laravel 5.7 на 5.8 ] #1 -  https://www.youtube.com/watch?v=bEFFIO7FLkY&list=PLoonZ8wII66iP0fJPHhkLXa3k7CMef9ak&index=4
 
 37. Laravel урок № 0.1 / 37: [ Переход с Laravel 5.7 на 5.8 ] #2 - https://www.youtube.com/watch?v=43LNZGfSFSw
+
+Удаляем таблицы БД
+накатываем миграции и сиды:
+artisan migrate --seed
+
+38. Laravel урок №38: [ Страница редактирования статьи блога ] #1 - https://www.youtube.com/watch?v=AjXv3anpomw
