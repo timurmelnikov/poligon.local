@@ -203,3 +203,5 @@ php artisan make:controller Blog/Admin/PostController -r
 artisan migrate --seed
 
 38. Laravel урок №38: [ Страница редактирования статьи блога ] #1 - https://www.youtube.com/watch?v=AjXv3anpomw
+
+39. Laravel урок №39: [ Страница редактирования статьи блога ] #2 - https://www.youtube.com/watch?v=kY3XxW9CeSM
