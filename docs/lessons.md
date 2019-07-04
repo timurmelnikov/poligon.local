@@ -205,3 +205,5 @@ artisan migrate --seed
 38. Laravel урок №38: [ Страница редактирования статьи блога ] #1 - https://www.youtube.com/watch?v=AjXv3anpomw
 
 39. Laravel урок №39: [ Страница редактирования статьи блога ] #2 - https://www.youtube.com/watch?v=kY3XxW9CeSM
+
+40. Laravel урок №40: [ Обновление статьи блога на Ларавел ] - https://www.youtube.com/watch?v=OtLxvt2RTl0

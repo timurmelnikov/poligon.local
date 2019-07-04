@@ -38,8 +38,8 @@
                                    <button type="submit" class="btn btn-link">Удалить</button>
                                </div>
                            </div>
-                           <div class="col-md-3"></div>
                         </div>
+                        <div class="col-md-3"></div>
                     </div>
                 </form>
             @endif
