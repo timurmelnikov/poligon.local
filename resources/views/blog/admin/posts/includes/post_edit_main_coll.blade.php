@@ -77,14 +77,15 @@
                         <div class="form-check">
                             <input name="is_published"
                                     type="hidden"
-                                     value="0">
+                                    value="0">
+
                             <input name="is_published"
                                     type="checkbox"
-                            class="form-check-input"
-                            value="{{$item->is_published}}"
-                            @if($item->is_published)
-                                checked="checked"
-                            @endif
+                                    class="form-check-input"
+                                   value="1"
+                                    @if($item->is_published)
+                                        checked="checked"
+                                    @endif
                             >
                             <label class="form-check-label" for="is_published">Опубликовано</label>
                         </div>

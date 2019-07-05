@@ -207,3 +207,5 @@ artisan migrate --seed
 39. Laravel урок №39: [ Страница редактирования статьи блога ] #2 - https://www.youtube.com/watch?v=kY3XxW9CeSM
 
 40. Laravel урок №40: [ Обновление статьи блога на Ларавел ] - https://www.youtube.com/watch?v=OtLxvt2RTl0
+
+41. Laravel урок №41: [ Наблюдатель. Observer. Обсервер ] - https://www.youtube.com/watch?v=8axUabsTJS0
