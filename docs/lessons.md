@@ -200,7 +200,7 @@ php artisan make:controller Blog/Admin/PostController -r
 
 Удаляем таблицы БД
 накатываем миграции и сиды:
-artisan migrate --seed
+php artisan migrate --seed
 
 38. Laravel урок №38: [ Страница редактирования статьи блога ] #1 - https://www.youtube.com/watch?v=AjXv3anpomw
 
@@ -209,3 +209,9 @@ artisan migrate --seed
 40. Laravel урок №40: [ Обновление статьи блога на Ларавел ] - https://www.youtube.com/watch?v=OtLxvt2RTl0
 
 41. Laravel урок №41: [ Наблюдатель. Observer. Обсервер ] - https://www.youtube.com/watch?v=8axUabsTJS0
+
+php artisan make:observer BlogPostObserver --model=Models\BlogPost
+php artisan make:observer BlogCategoryObserver --model=Models\BlogCategory
+
+42. Laravel урок №42: [ Обсервер для категорий ] - https://www.youtube.com/watch?v=mune-kXSavA
+
