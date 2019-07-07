@@ -18,7 +18,6 @@ class BlogCategory extends Model
     ];
 
 
-
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
@@ -27,7 +26,6 @@ class BlogCategory extends Model
         // Категория принадлежит родительской категории.
         return $this->belongsTo(Self::class, 'parent_id', 'id');
     }
-
 
 
 }

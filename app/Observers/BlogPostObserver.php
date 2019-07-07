@@ -80,7 +80,7 @@ class BlogPostObserver
 //        dd($test);
 
          $this->setPublishedAt($blogPost);
-         $this->setSlug($blogPost);
+        $this->setSlug($blogPost);
 
     }
 
