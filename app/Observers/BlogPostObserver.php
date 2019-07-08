@@ -11,10 +11,10 @@ class BlogPostObserver
     /**
      * Handle the models blog post "created" event.
      *
-     * @param  BlogPost  $blogPost
+     * @param BlogPost $blogPost
      * @return void
      */
-    public function created(BlogPost  $blogPost)
+    public function created(BlogPost $blogPost)
     {
         //
     }
@@ -22,10 +22,10 @@ class BlogPostObserver
     /**
      * Handle the models blog post "updated" event.
      *
-     * @param  BlogPost  $blogPost
+     * @param BlogPost $blogPost
      * @return void
      */
-    public function updated(BlogPost  $blogPost)
+    public function updated(BlogPost $blogPost)
     {
         //
     }
@@ -33,7 +33,7 @@ class BlogPostObserver
     /**
      * Handle the models blog post "deleted" event.
      *
-     * @param  BlogPost  $blogPost
+     * @param BlogPost $blogPost
      * @return void
      */
     public function deleted(BlogPost $blogPost)
@@ -44,7 +44,7 @@ class BlogPostObserver
     /**
      * Handle the models blog post "restored" event.
      *
-     * @param  BlogPost  $blogPost
+     * @param BlogPost $blogPost
      * @return void
      */
     public function restored(BlogPost $blogPost)
@@ -55,10 +55,10 @@ class BlogPostObserver
     /**
      * Handle the models blog post "force deleted" event.
      *
-     * @param  BlogPost  $blogPost
+     * @param BlogPost $blogPost
      * @return void
      */
-    public function forceDeleted(BlogPost  $blogPost)
+    public function forceDeleted(BlogPost $blogPost)
     {
         //
     }
@@ -66,10 +66,11 @@ class BlogPostObserver
     /**
      * Обработка перед изменением записи
      *
-     * @param  BlogPost  $blogPost
+     * @param BlogPost $blogPost
      * @return void
      */
-    public function updating(BlogPost  $blogPost){
+    public function updating(BlogPost $blogPost)
+    {
 
 //        $test[] = $blogPost->isDirty();
 //        $test[] = $blogPost->isDirty('is_published');
@@ -79,21 +80,41 @@ class BlogPostObserver
 //        $test[] = $blogPost->getOriginal('is_published');
 //        dd($test);
 
-         $this->setPublishedAt($blogPost);
+        $this->setPublishedAt($blogPost);
         $this->setSlug($blogPost);
 
     }
 
+
+    /**
+     * Обработка перед вставкой записи
+     *
+     * @param BlogPost $blogPost
+     * @return void
+     */
+    public function creating(BlogPost $blogPost)
+    {
+
+        $this->setPublishedAt($blogPost);
+        $this->setSlug($blogPost);
+        $this->setHtml($blogPost);
+        $this->setUser($blogPost);
+
+
+    }
+
+
     /**
      * Устанавливает дату публикации
      *
-     * @param  BlogPost  $blogPost
+     * @param BlogPost $blogPost
      * @return void
      */
-    protected function setPublishedAt(BlogPost  $blogPost){
+    protected function setPublishedAt(BlogPost $blogPost)
+    {
 
         $needSetPublished = empty($blogPost->published_at) && $blogPost['is_published'];
-        if($needSetPublished){
+        if ($needSetPublished) {
             $blogPost['published_at'] = Carbon::now();
         }
     }
@@ -102,12 +123,37 @@ class BlogPostObserver
     /**
      * Устанавливает Slug
      *
-     * @param  BlogPost  $blogPost
+     * @param BlogPost $blogPost
      * @return void
      */
-    protected function setSlug(BlogPost  $blogPost){
-        if(empty($blogPost['slug'])){
+    protected function setSlug(BlogPost $blogPost)
+    {
+        if (empty($blogPost['slug'])) {
             $blogPost['slug'] = Str::slug($blogPost['title']);
         }
     }
+
+
+    /**
+     * Устанавливает content_html
+     *
+     * @param BlogPost $blogPost
+     * @return void
+     */
+    protected function setHtml(BlogPost $blogPost)
+    {
+        $blogPost['content_html'] = 'rrwerewcvxb fhgfhgfhfg egre';
+    }
+
+    /**
+     * Устанавливает user_id
+     *
+     * @param BlogPost $blogPost
+     * @return void
+     */
+    protected function setUser(BlogPost $blogPost)
+    {
+        $blogPost['user_id'] = 1;
+    }
+
 }
