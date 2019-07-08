@@ -218,3 +218,5 @@ php artisan make:observer BlogCategoryObserver --model=Models\BlogCategory
 43. Laravel урок №43: [ Создание нового поста ] #1 - https://www.youtube.com/watch?v=WQb2BC8xezY
 
 44. Laravel урок №44: [ Создание новой стать блога ] #2 - https://www.youtube.com/watch?v=E2ZZmynatZc
+
+45. Laravel урок №45: [ Связь с родительской категорией ] - https://www.youtube.com/watch?v=H_2qVlCDfO0&list=PLoonZ8wII66iP0fJPHhkLXa3k7CMef9ak&index=49

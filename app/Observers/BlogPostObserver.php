@@ -94,13 +94,10 @@ class BlogPostObserver
      */
     public function creating(BlogPost $blogPost)
     {
-
         $this->setPublishedAt($blogPost);
         $this->setSlug($blogPost);
         $this->setHtml($blogPost);
         $this->setUser($blogPost);
-
-
     }
 
 
@@ -112,7 +109,6 @@ class BlogPostObserver
      */
     protected function setPublishedAt(BlogPost $blogPost)
     {
-
         $needSetPublished = empty($blogPost->published_at) && $blogPost['is_published'];
         if ($needSetPublished) {
             $blogPost['published_at'] = Carbon::now();
@@ -142,18 +138,21 @@ class BlogPostObserver
      */
     protected function setHtml(BlogPost $blogPost)
     {
-        $blogPost['content_html'] = 'rrwerewcvxb fhgfhgfhfg egre';
+        if ($blogPost->isDirty('content_raw')) {
+            // TODO Тут будет генерация HTML markdown > html
+            $blogPost->content_html = $blogPost->content_raw;
+        }
     }
 
     /**
-     * Устанавливает user_id
+     * Устанавливает user_id. Если не указан - то пользователь по умолчанию
      *
      * @param BlogPost $blogPost
      * @return void
      */
     protected function setUser(BlogPost $blogPost)
     {
-        $blogPost['user_id'] = 1;
+        $blogPost->user_id = auth()->id() ?? BlogPost::UNKNOWN_USER;
     }
 
 }
