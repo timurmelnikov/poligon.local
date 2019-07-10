@@ -125,22 +125,22 @@ class PostController extends BaseController
 
         $item = $this->blogPostRepository->getEdit($id);
 
-        if(empty($item)){
+        if (empty($item)) {
             return back()
-                ->with(['msg'=>"Запись id=[{$id}] не найдена"])
+                ->with(['msg' => "Запись id=[{$id}] не найдена"])
                 ->withInput();
         }
 
         $data = $request->all();
         $result = $item->update($data);
 
-        if($result){
+        if ($result) {
             return redirect()
                 ->route('blog.admin.posts.edit', $item->id)
-                ->with(['success'=>'Успешно сохранено']);
+                ->with(['success' => 'Успешно сохранено']);
         } else {
             return back()
-                ->withErrors(['msg'=> 'Ошибка сохранения'])
+                ->withErrors(['msg' => 'Ошибка сохранения'])
                 ->withInput();
         }
 
@@ -154,6 +154,20 @@ class PostController extends BaseController
      */
     public function destroy($id)
     {
-        dd(__METHOD__, $id, request()->all());
+        // Софт-удаление
+        //$result = BlogPost::destroy($id);
+
+        // Полное удаление из БД
+        $result = BlogPost::find($id)->forceDelete();
+
+        if ($result) {
+            return redirect()
+                ->route('blog.admin.posts.index')
+                ->with(['success' => "Запись id[$id] удалена СДЕЛАТЬ restored !!!"]);
+
+        } else {
+            return back()->withErrors(['msg' => 'Ошибка удаления']);
+        }
+
     }
 }

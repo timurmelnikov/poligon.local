@@ -224,3 +224,5 @@ php artisan make:observer BlogCategoryObserver --model=Models\BlogCategory
 46. Laravel урок №46: [ Аксессоры и мутаторы. Accessors & Mutators ] - https://www.youtube.com/watch?v=d_kkdrNorRY&list=PLoonZ8wII66iP0fJPHhkLXa3k7CMef9ak&index=50
 
 47. Laravel урок №47: [ Eloquent. Удаление записи ] - https://www.youtube.com/watch?v=1fBHcsUKLxM&list=PLoonZ8wII66iP0fJPHhkLXa3k7CMef9ak&index=52
+
+48. Laravel урок №48: [ Collections. Коллекции #1 ] - https://www.youtube.com/watch?v=nDcBGssCnH0&list=PLoonZ8wII66iP0fJPHhkLXa3k7CMef9ak&index=53

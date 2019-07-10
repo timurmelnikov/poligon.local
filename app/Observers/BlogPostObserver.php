@@ -30,6 +30,19 @@ class BlogPostObserver
         //
     }
 
+
+    /**
+     * Перед удалением
+     *
+     * @param BlogPost $blogPost
+     */
+    public function deleting(BlogPost $blogPost)
+    {
+        //dd(__METHOD__, $blogPost);
+        //return false;
+    }
+
+
     /**
      * Handle the models blog post "deleted" event.
      *
@@ -38,7 +51,7 @@ class BlogPostObserver
      */
     public function deleted(BlogPost $blogPost)
     {
-        //
+        //dd(__METHOD__, $blogPost);
     }
 
     /**
