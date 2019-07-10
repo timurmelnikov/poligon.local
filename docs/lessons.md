@@ -222,3 +222,5 @@ php artisan make:observer BlogCategoryObserver --model=Models\BlogCategory
 45. Laravel урок №45: [ Связь с родительской категорией ] - https://www.youtube.com/watch?v=H_2qVlCDfO0&list=PLoonZ8wII66iP0fJPHhkLXa3k7CMef9ak&index=49
 
 46. Laravel урок №46: [ Аксессоры и мутаторы. Accessors & Mutators ] - https://www.youtube.com/watch?v=d_kkdrNorRY&list=PLoonZ8wII66iP0fJPHhkLXa3k7CMef9ak&index=50
+
+47. Laravel урок №47: [ Eloquent. Удаление записи ] - https://www.youtube.com/watch?v=1fBHcsUKLxM&list=PLoonZ8wII66iP0fJPHhkLXa3k7CMef9ak&index=52
