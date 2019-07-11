@@ -40,6 +40,10 @@ Route::group($groupData, function () {
     Route::resource('posts', 'PostController')
         ->except(['show'])
         ->names('blog.admin.posts');
+
+    //Восстановление поста (расширение ресурсного контроллера)
+    Route::name('blog.admin.posts.restore')->get('posts/{id}/restore', 'PostController@restore');
+
 });
 
 //Route::resource('rest', 'RestTestController')->names('restTest');

@@ -7,6 +7,7 @@ use App\Http\Requests\BlogPostUpdateRequest;
 use App\Models\BlogPost;
 use App\Repositories\BlogPostRepository;
 use App\Repositories\BlogCategoryRepository;
+use Carbon\Carbon;
 
 class PostController extends BaseController
 {
@@ -155,19 +156,44 @@ class PostController extends BaseController
     public function destroy($id)
     {
         // Софт-удаление
-        //$result = BlogPost::destroy($id);
+        $result = BlogPost::destroy($id);
 
         // Полное удаление из БД
-        $result = BlogPost::find($id)->forceDelete();
+        //$result = BlogPost::find($id)->forceDelete();
+
+        if ($result) {
+            $url = route('blog.admin.posts.restore', $id);
+            return redirect()
+                ->route('blog.admin.posts.index')
+                ->with(['success' => "Запись id[$id] удалена. <a href=\"$url\">Восстановить (у Вас - 10 секунд!)</a> "]);
+        } else {
+            return back()->withErrors(['msg' => 'Ошибка удаления']);
+        }
+    }
+
+
+    public function restore($id)
+    {
+
+        $timeX = Carbon::parse(now())->addSecond(-10);
+
+        $item = BlogPost::withTrashed()
+            ->where('deleted_at', '>=', $timeX)
+            ->find($id);
+        if($item){
+            $result =   $item->restore();
+        } else {
+            return back()->withErrors(['msg' => 'Поздно пить Боржоми']);
+        }
+
 
         if ($result) {
             return redirect()
                 ->route('blog.admin.posts.index')
-                ->with(['success' => "Запись id[$id] удалена СДЕЛАТЬ restored !!!"]);
+                ->with(['success' => "Запись id[$id] восстановлена."]);
 
         } else {
-            return back()->withErrors(['msg' => 'Ошибка удаления']);
+            return back()->withErrors(['msg' => 'Ошибка восстановления']);
         }
-
     }
 }
