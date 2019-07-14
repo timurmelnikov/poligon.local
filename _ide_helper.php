@@ -3,7 +3,7 @@
 
 /**
  * A helper file for Laravel 5, to provide autocomplete information to your IDE
- * Generated for Laravel 5.8.27 on 2019-07-09 07:23:59.
+ * Generated for Laravel 5.8.28 on 2019-07-14 11:49:40.
  *
  * This file should not be included in your code, only analyzed by your IDE!
  *
@@ -11904,6 +11904,19 @@ namespace Illuminate\Support\Facades {
         }
         
         /**
+         * Get a subset of the session data.
+         *
+         * @param array $keys
+         * @return array 
+         * @static 
+         */ 
+        public static function only($keys)
+        {
+                        /** @var \Illuminate\Session\Store $instance */
+                        return $instance->only($keys);
+        }
+        
+        /**
          * Checks if a key exists.
          *
          * @param string|array $key
@@ -14537,26 +14550,6 @@ namespace Illuminate\Support\Facades {
  
 }
 
-namespace Illuminate\Support { 
-
-    /**
-     * 
-     *
-     */ 
-    class Arr {
-         
-    }
-
-    /**
-     * 
-     *
-     */ 
-    class Str {
-         
-    }
- 
-}
-
 namespace Barryvdh\Debugbar { 
 
     /**
@@ -15167,8 +15160,6 @@ namespace Barryvdh\Debugbar {
 namespace  { 
 
     class App extends \Illuminate\Support\Facades\App {}
-
-    class Arr extends \Illuminate\Support\Arr {}
 
     class Artisan extends \Illuminate\Support\Facades\Artisan {}
 
@@ -17935,8 +17926,6 @@ namespace  {
     class Session extends \Illuminate\Support\Facades\Session {}
 
     class Storage extends \Illuminate\Support\Facades\Storage {}
-
-    class Str extends \Illuminate\Support\Str {}
 
     class URL extends \Illuminate\Support\Facades\URL {}
 

@@ -226,3 +226,5 @@ php artisan make:observer BlogCategoryObserver --model=Models\BlogCategory
 47. Laravel урок №47: [ Eloquent. Удаление записи ] - https://www.youtube.com/watch?v=1fBHcsUKLxM&list=PLoonZ8wII66iP0fJPHhkLXa3k7CMef9ak&index=52
 
 48. Laravel урок №48: [ Collections. Коллекции #1 ] - https://www.youtube.com/watch?v=nDcBGssCnH0&list=PLoonZ8wII66iP0fJPHhkLXa3k7CMef9ak&index=53
+
+49. Laravel урок №49: [ Collections. Коллекции #2 ] - https://www.youtube.com/watch?v=zkuAcfdnS48&list=PLoonZ8wII66iP0fJPHhkLXa3k7CMef9ak&index=54
