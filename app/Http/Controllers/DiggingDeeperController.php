@@ -94,12 +94,50 @@ class DiggingDeeperController extends Controller
             $newItem->item_id = $item['id'];
             $newItem->item_name = $item['title'];
             $newItem->exists = is_null($item['deleted_at']);
-            $newItem->created_at = Carbon::parse($item['deleted_at']);
+            $newItem->created_at = Carbon::parse($item['created_at']);
             $newItem->xxx = 'yyy';
             return $newItem;
         });
 
-        dd($collection);
+        //dd($collection);
+//        $newItem = new \stdClass();
+//        $newItem->id = 9999;
+//
+//        $newItem2 = new \stdClass();
+//        $newItem2->id=7777;
+
+        //dd($newItem, $newItem2);
+
+        //$collection->prepend($newItem);
+        //$collection->push($newItem2);
+        //dd( $collection);
+
+        //Установить элемент в начало коллекции
+//        $newItemFirst = $collection->prepend($newItem)->first();
+//        $newItemLast = $collection->push($newItem2)->last();
+//        $pulledItem = $collection->pull(5);
+//
+//        dd(compact('collection', 'newItemFirst', 'newItemLast', 'pulledItem' ));
+
+        //Фильтрация
+//        $filtred = $collection->filter(function ($item){
+//            $byDay = $item->created_at->isFriday();
+//            $byDate = $item->created_at->day == 5;
+//
+//            $result = $byDay && $byDate;
+//
+//            return $result;
+//        });
+//
+//        dd(compact('filtred'));
+
+        $sortedSimpleCollection = collect([1,2,5,4,3,6]);
+        $sortedAscCollection = $collection->sortBy('created_at')->sort()->values();
+        $sortedDescCollection = $collection->sortByDesc('created_at');
+
+        dd(compact('sortedSimpleCollection','sortedAscCollection','sortedDescCollection'));
+
+
     }
 
 }

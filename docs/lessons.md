@@ -230,3 +230,5 @@ php artisan make:observer BlogCategoryObserver --model=Models\BlogCategory
 49. Laravel урок №49: [ Collections. Коллекции #2 ] - https://www.youtube.com/watch?v=zkuAcfdnS48&list=PLoonZ8wII66iP0fJPHhkLXa3k7CMef9ak&index=54
 
 50. Laravel урок №50: [ Collections. Коллекции #3 ] - https://www.youtube.com/watch?v=-zRCx5K82QA&list=PLoonZ8wII66iP0fJPHhkLXa3k7CMef9ak&index=55
+
+51. XXX...
